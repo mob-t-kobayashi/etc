@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_jar" name="">
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+	<target name="create_jar">
+		<delete dir="classes"/>
+		<mkdir dir="classes"/>
+		<path id="classpath">
+    		<fileset dir="lib">
+    			<include name="*.jar"/>
+    		</fileset>
+    	</path>
+    	<javac  srcdir="src"
+    	        destdir="classes"
+    	        classpathref="classpath" />
+		<jar destfile="C://00_MPZ/tools/mpz_DB_data/mpz_admin_client_csv_20150224/mpz-admin-client-csv-1.0.2.jar"
+			basedir="classes"
+			excludes="**/conf.properties">
+		    <manifest>
+		        <attribute name="Main-Class" value="mpz.admin.csv.Main"/>
+		        <attribute name="Class-Path" value=".
+		        	..
+		        	./lib/httpclient-cache-4.4.jar
+		        	 ./lib/httpclient-win-4.4.jar
+		        	 ./lib/httpcore-4.4.jar
+		        	 ./lib/httpmime-4.4.jar
+		        	 ./lib/jna-4.1.0.jar
+		        	 ./lib/jna-platform-4.1.0.jar
+		        	 ./lib/log4j-1.2.14.jar
+		        	 ./lib/commons-codec-1.9.jar
+		        	 ./lib/commons-logging-1.2.jar
+		        	 ./lib/fluent-hc-4.4.jar
+		        	 ./lib/gson-2.3.1.jar
+		        	 ./lib/httpclient-4.4.jar
+		        "/>
+		    </manifest>
+		</jar>
+		<echo>finish</echo>
+    </target>
+</project>
