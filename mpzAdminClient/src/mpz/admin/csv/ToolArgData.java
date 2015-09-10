@@ -158,7 +158,7 @@ public class ToolArgData {
 					sb.append(",");
 				sb.append(s);
 			}
-			log.error("targer csv file is not invalid. file =" + sb.toString());
+			log.error("target csv file is invalid. file =" + sb.toString());
 			return false;
 		}
 
